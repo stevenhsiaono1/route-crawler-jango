@@ -37,4 +37,5 @@ class FoodAdmin(admin.ModelAdmin):
     list_filter = ('price_name',)
     fields = ['price_name']    # fields表示該欄位才可以修改，而fields代表包含，exclude代表除外
     search_fields = ['food_name', 'price_name']   #
+    ordering = ['-price_name']
 
