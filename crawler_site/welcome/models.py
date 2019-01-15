@@ -32,5 +32,9 @@ class VendorAdmin(admin.ModelAdmin):
 class FoodAdmin(admin.ModelAdmin):
     # list_display = ('id', 'food_name')
     list_display = [field.name for field in Food._meta.fields]
-    # 可增加過濾器 list_filter: (最後要有',')
+    # 可增加過濾器 list_filter: (最後要有',') , 如此才能在admin進行過濾搜尋，
+    # 若想自行開發客制filter: 參考: https://ithelp.ithome.com.tw/articles/10200944
     list_filter = ('price_name',)
+    fields = ['price_name']    # fields表示該欄位才可以修改，而fields代表包含，exclude代表除外
+    search_fields = ['food_name', 'price_name']   #
+
