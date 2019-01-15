@@ -8,7 +8,7 @@ class Vendor(models.Model):
     phone_number = models.CharField(max_length = 20)
     address = models.CharField(max_length = 100)
 
-    # 覆寫 __str__ ， 它會去改變資料所要顯示的值
+    # 覆寫 __str__ ， 它會去改變資料所要顯示的值 (是指例如用django shell取資料的呈現，不是admin頁)
     def __str__(self):
         return self.vendor_name
 
@@ -25,8 +25,12 @@ class Food(models.Model):
 # 或者使用decorator
 @admin.register(Vendor)
 class VendorAdmin(admin.ModelAdmin):
-    list_display = ('id', 'vendor_name')
+    # list_display = ('id', 'vendor_name')     # list_display 可以秀全部!ex,
+    list_display = [field.name for field in Vendor._meta.fields]
 
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ('id', 'food_name')
+    # list_display = ('id', 'food_name')
+    list_display = [field.name for field in Food._meta.fields]
+    # 可增加過濾器 list_filter: (最後要有',')
+    list_filter = ('price_name',)
