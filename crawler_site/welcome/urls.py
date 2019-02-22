@@ -19,5 +19,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),     # 表示要查詢welcome時，會去拿views的index資料
+    path('', views.showtemplate, name='showtemplate'),     # 表示要查詢welcome時，會去拿views的index資料     //  name='index'之後會補解釋，目前還沒用到
 ]

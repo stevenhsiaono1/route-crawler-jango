@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Vendor
 
 # Create your views here.
-def index(request):
+def showtemplate(request):
     # return HttpResponse("Hello~  for Test!")
-    return render(request, 'test.html')       # 使用templates測試
+    # 嘗試把vendor的model取出
+    vendor_list = Vendor.objects.all()
+    context = {'vendor_list': vendor_list}
+
+    return render(request, 'test.html', context)       # 使用templates測試
