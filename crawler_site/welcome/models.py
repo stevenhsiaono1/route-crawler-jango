@@ -28,6 +28,7 @@ class VendorAdmin(admin.ModelAdmin):
     # list_display = ('id', 'vendor_name')     # list_display 可以秀全部!ex,
     list_display = [field.name for field in Vendor._meta.fields]
 
+
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
     # list_display = ('id', 'food_name')

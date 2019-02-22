@@ -55,7 +55,7 @@ ROOT_URLCONF = 'crawler_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR+"/templates"],                                                         # 放其他template路徑(可用BASE DIR去組)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

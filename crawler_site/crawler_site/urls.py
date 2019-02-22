@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('welcome/', include('welcome.urls')),
+    path('welcome/', include('welcome.urls')),     # 再去對應welcome此APP的url對應
     path('admin/', admin.site.urls),
 ]
