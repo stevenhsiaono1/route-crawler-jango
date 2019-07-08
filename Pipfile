@@ -6,8 +6,10 @@ name = "pypi"
 [packages]
 requests = "*"
 django = "*"
+fake-useragent = "*"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.7"

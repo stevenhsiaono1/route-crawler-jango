@@ -1,17 +1,38 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{# 因應已建置base.html，改為只需繼承bae.html #}
+
+{% extends "base.html" %}
+{% block title %}
+    My Store
+{% endblock %}
+
+{% block content %}
+
     {% for vlist in vendor_list %}
-    <h1> 店家 : {{vlist.vendor_name }} </h1>
-    <ul>
-      <li>店名 : {{ vlist.store_name }}</li>
-      <li>電話 : {{ vlist.phone_number }}</li>
-      <li>地址 : {{ vlist.addres }}</li>
-    </ul>
+        <h1> 店家 : {{vlist.vendor_name }} </h1>
+        <ul>
+          <li>店名 : {{ vlist.store_name }}</li>
+          <li>電話 : {{ vlist.phone_number }}</li>
+          <li>地址 : {{ vlist.address }}</li>
+        </ul>
     {% endfor %}
-  </body>
-</html>
+
+{% endblock %}
+
+{#以下改用上方的繼承方式取代#}
+{#<!DOCTYPE html>#}
+{#<html lang="en" dir="ltr">#}
+{#  <head>#}
+{#    <meta charset="utf-8">#}
+{#    <title>My Store</title>#}
+{#  </head>#}
+{#  <body>#}
+{#    {% for vlist in vendor_list %}#}
+{#    <h1> 店家 : {{vlist.vendor_name }} </h1>#}
+{#    <ul>#}
+{#      <li>店名 : {{ vlist.store_name }}</li>#}
+{#      <li>電話 : {{ vlist.phone_number }}</li>#}
+{#      <li>地址 : {{ vlist.address }}</li>#}
+{#    </ul>#}
+{#    {% endfor %}#}
+{#  </body>#}
+{#</html>#}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %} {% endblock %}</title>
+
+{# block endblock區間就是用來讓其他繼承者去更動的區間，因此我們可以去test.html修改! #}
+
+  </head>
+  <body>
+  	{% block content %}
+    {% endblock %}
+  </body>
+</html>
